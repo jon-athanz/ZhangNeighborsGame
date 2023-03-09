@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public class Score {
+public class Score {
+    public int score;
 }
