@@ -2,9 +2,11 @@ import java.util.Arrays;
 
 public class GameBoard {
     public int[][] board;
+    public int size;
 
-    public GameBoard() {
-        board = new int[2][2];
+    public GameBoard(int size) {
+        this.size = size;
+        board = new int[size][size];
     }
 
     public void printBoard() {
@@ -32,5 +34,10 @@ public class GameBoard {
             return true;
         }
     }
+
+    public int getSize() {
+        return size;
+    }
+
 
 }

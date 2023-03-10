@@ -4,9 +4,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to the Neighbors Game!");
+
+        System.out.println("How many rows & columns would you like to play with? (Only one number required) ");
+        int size = scan.nextInt();
+
         boolean win = false;
         int randomNum;
-        GameBoard play = new GameBoard();
+        int totalScore = 0;
+        GameBoard play = new GameBoard(size);
 
         while (win == false) {
             System.out.println("");
@@ -27,9 +32,10 @@ public class Main {
         System.out.println("This is your final board: ");
         play.printBoard();
 
+        System.out.println("");
+        System.out.println("Your total row score is " + Score.checkRowScore(play.board));
+        System.out.println("Your total column score is " + Score.checkColumnScore(play.board));
 
-
-
-
+        System.out.println("Your total score is " + Score.getTotalScore(play.board));
     }
 }
